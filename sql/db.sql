@@ -59,9 +59,9 @@ INSERT INTO `modulation` (`ID`, `name`) VALUES
 
 CREATE TABLE `relais` (
   `ID` bigint(20) NOT NULL,
-  `title` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
   `callsign` varchar(10) NOT NULL,
-  `frequencyIn` int(11) NOT NULL,
+  `frequencyIn` double NOT NULL,
   `frequencyOut` double NOT NULL,
   `offset` double NOT NULL DEFAULT '0',
   `coordinateX` decimal(10,0) NOT NULL,

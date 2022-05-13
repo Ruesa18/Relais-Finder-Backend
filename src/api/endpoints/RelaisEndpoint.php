@@ -12,7 +12,7 @@ class RelaisEndpoint extends Endpoint implements Endpointable {
     public function index($request): AbstractResponse {
         $mysql = new MySQL();
         $data = $mysql->execute("SELECT * FROM relais")->asObject("PHREAPI\api\model\RelaisModel");
-        return new JSONResponse(200, $data);
+        return new JSONResponse(200, !$data ? [] : $data);
     }
 
     public function create($request): AbstractResponse {}
