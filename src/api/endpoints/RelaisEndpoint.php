@@ -6,12 +6,12 @@ use PHREAPI\kernel\utils\output\JSONResponse;
 use PHREAPI\kernel\utils\interfaces\database\MySQL;
 use PHREAPI\kernel\utils\ConfigLoader;
 
-class ExampleEndpoint extends Endpoint implements Endpointable {
+class RelaisEndpoint extends Endpoint implements Endpointable {
     private $data;
 
     public function index($request): AbstractResponse {
         $mysql = new MySQL();
-        $data = $mysql->execute("SELECT * FROM user")->asObject("PHREAPI\api\model\UserModel");
+        $data = $mysql->execute("SELECT * FROM relais")->asObject("PHREAPI\api\model\RelaisModel");
         return new JSONResponse(200, $data);
     }
 
